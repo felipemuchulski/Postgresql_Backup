@@ -5,11 +5,13 @@ Esse repositório tem como base gerar Backups diários do banco de dados Postgre
 Dentro do script temos a parte de criação de diretórios:
 
 mkdir -p $LOG_HOME                      >> $ARQLOG  
+
 mkdir -p $BKP_ZIP                       >> $ARQLOG
 
 Não executei o script sem ter criado eles antes, eu adicionei essa parte no fim do arquivo, caso não funcione, pode ser criado os diretórios por fora com os seguintes comandos na linha e terminal.
 
 mkdir bkp_zip
+
 mkdir logs
 
 (25/04/23) Mas a ideia principal é fazer funcionar com o o script. Trago atualizações em breve.
