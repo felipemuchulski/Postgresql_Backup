@@ -1,0 +1,55 @@
+
+--------------------------------
+--     INICIO DO BACKUP       --
+--------------------------------
+Data:                           
+Mon Apr 24 17:42:46 -03 2023
+
+--------------------------------
+--   CRIACAO DOS DIRETORIOS   --
+--------------------------------
+Criado diretório de log /mnt/c/Desenv/Projetos-Estudos/Postgres_Backup/logs
+Criado diretório de backup /mnt/c/Desenv/Projetos-Estudos/Postgres_Backup/bkp_zip
+
+---------------------------------
+--   ACESSANDO TERMINAL PSQL   --
+---------------------------------
+Mon Apr 24 17:42:46 -03 2023
+psql (PostgreSQL) 15.2 (Ubuntu 15.2-1.pgdg22.04+1)
+Executando arquivo sql_backup.sql
+
+---------------------------------
+-- COMPACTA O BACKUP DO BANCO  --
+---------------------------------
+Compactando arquivos de Backup:
+Mon Apr 24 17:42:46 -03 2023
+
+--------------------------------------
+-- MOVENDO ARQUIVOS PARA DIRETÓRIO  --
+--------------------------------------
+Mon Apr 24 17:42:47 -03 2023
+Movendo arquivos zipados para diretório
+Listando diretório e conteúdo zipados:
+/mnt/c/Desenv/Projetos-Estudos/Postgres_Backup/bkp_zip:
+backup-muchulski-2023-04-24.sql.gz
+backup-postgres-2023-04-24.sql.gz
+
+---------------------------------------
+--  REMOVER LOGS DA SEMANA ANTERIOR  --
+---------------------------------------
+
+--------------------------------
+-- INFORMACOES GERAIS BACKUP  --
+--------------------------------
+Quantidade de arquivos no diretório de bkp
+backup-muchulski-2023-04-24.sql.gz
+backup-postgres-2023-04-24.sql.gz
+
+--------------------
+-- FIM DO BACKUP  --
+--------------------
+Inicio do backup em:            
+Mon Apr 24 17:42:46 -03 2023
+Termino do backup em:           
+Mon Apr 24 17:42:47 -03 2023
+
