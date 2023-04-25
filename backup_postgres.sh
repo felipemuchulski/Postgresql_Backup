@@ -10,10 +10,32 @@ LOG_HOME=$DIRETORIO/logs
 ARQLOG=$LOG_HOME/backup.log
 BKP_ZIP=$DIRETORIO/bkp_zip
 
+#Criação dos diretórios
+if [ -d $LOG_HOME ]; then
+   echo ''
+else 
+ cd $DIRETORIO
+  mkdir $LOG_HOME
+   chmod +x $LOG_HOME
+fi
+
+if [ -d $BKP_ZIP ]; then
+ echo ''
+else 
+ cd $DIRETORIO
+  mkdir $BKP_ZIP
+   chmod +x $BKP_ZIP
+fi
+
+echo                                    >  $ARQLOG    
+echo "--------------------------------" >> $ARQLOG 
+echo "--   CRIACAO DOS DIRETORIOS   --" >> $ARQLOG 
+echo "--------------------------------" >> $ARQLOG 
+echo                                    >> $ARQLOG
 
 
 #Inicio do Backup
-echo                                    >  $ARQLOG
+echo                                    >> $ARQLOG
 echo "--------------------------------" >> $ARQLOG 
 echo "--     INICIO DO BACKUP       --" >> $ARQLOG 
 echo "--------------------------------" >> $ARQLOG 
@@ -21,17 +43,6 @@ echo "Data:                           " >> $ARQLOG
 date                                    >> $ARQLOG
 echo                                    >> $ARQLOG
 
-
-#Criação dos diretórios
-echo "--------------------------------" >> $ARQLOG 
-echo "--   CRIACAO DOS DIRETORIOS   --" >> $ARQLOG 
-echo "--------------------------------" >> $ARQLOG 
-cd $DIRETORIO
-mkdir -p $LOG_HOME                      >> $ARQLOG  
-mkdir -p $BKP_ZIP                       >> $ARQLOG 
-echo 'Criado diretório de log' $LOG_HOME  >> $ARQLOG
-echo 'Criado diretório de backup' $BKP_ZIP >> $ARQLOG
-echo                                    >> $ARQLOG
 
 
 #Criação de arquivo executar backup
