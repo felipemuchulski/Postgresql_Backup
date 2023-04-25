@@ -16,6 +16,8 @@ mkdir logs
 
 (25/04/23) Mas a ideia principal é fazer funcionar com o o script. Trago atualizações em breve.
 
+(25/04/23) Efetuada alteração no script e agora cria o diretório por conta.
+
 # Documentação Relevante
 
 Link documentação psql: https://www.postgresql.org/docs/current/app-psql.html
