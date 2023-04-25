@@ -89,8 +89,7 @@ Depos de executar esse SELECT, pode ser efetuado o comando drop database.
 
 # Documentação Relevante
 
-Link documentação psql: https://www.postgresql.org/docs/current/app-psql.html
-
-Link documentação if-else Linux: https://www.shellscriptx.com/2016/12/estrutura-condicional-if-then-elif-else-fi.html
-
-Link exemplos com find Linux: https://www.certificacaolinux.com.br/comando-linux-find/
+Link documentação psql: https://www.postgresql.org/docs/current/app-psql.html <br>
+Link documentação if-else Linux: https://www.shellscriptx.com/2016/12/estrutura-condicional-if-then-elif-else-fi.html <br>
+Link exemplos com find Linux: https://www.certificacaolinux.com.br/comando-linux-find/ <br>
+Link documentação do pg_dump: https://www.postgresql.org/docs/current/app-pgdump.html
