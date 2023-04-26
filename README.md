@@ -65,7 +65,7 @@ SINTAXE: -U (define o usuário) / -f filename
 
 > Qual é melhor PG_DUMP OU PG_DUMPALL:
 
-Além dp pg_dump o PostgreSQL também oferece a pg_dumpall que permite fazer backup de todos os bancos de dados de uma vez. No entanto, não é recomendável usar essa ferramenta pelos seguintes motivos:
+Além do pg_dump o PostgreSQL também oferece a pg_dumpall que permite fazer backup de todos os bancos de dados de uma vez. No entanto, não é recomendável usar essa ferramenta pelos seguintes motivos:
 O pg_dumpall exporta todos os bancos de dados, um após o outro, em um único arquivo de script, o que impede que você execute a restauração paralela. Se você fizer backup de todos os bancos de dados dessa maneira, o processo de restauração levará mais tempo.
 O processamento de restore de todos os bancos de dados leva mais tempo do que cada um, portanto, você não sabe qual seria o restore de cada banco de dados está relacionado a um determinado momento.
 
