@@ -23,6 +23,36 @@ Para podermos gerar o backup de um database em especifico usaremos os seguintes 
 > Exemplo:
 su - postgres pg_dump muchulski > muchulski.bkp;
 
+É possível também configurar o formato do backup como binário, para isso iremos utilizar as seguintes informações:
+
+1- su - postgres;
+
+2- pg_dump -Fc database_name > nomebackup.bin;
+
+OBS: Os parâmetros utilizados foram para gerar o arquivo binário foram o F (responsável por definir o formato do backup) que contém parâmetros internos como por exemplo:
+
+p <br />
+plain
+
+Saída de um texto sem formatação SQL arquivo de script ( o padrão ).
+
+c <br />
+custom
+
+Saída de um arquivo de formato personalizado adequado para entrada em pg_restore. Juntamente com o formato de saída do diretório, este é o formato de saída mais flexível, pois permite a seleção manual e a reordenação de itens arquivados durante a restauração. Este formato também é compactado por padrão.
+
+d <br />
+directory
+
+Saída de um arquivo de formato de diretório adequado para entrada em pg_restore. Isso criará um diretório com um arquivo para cada tabela e blob sendo despejado, além do chamado arquivo do Índice que descreve os objetos despejados em um formato legível por máquina que pg_restore pode ler. Um arquivo de formato de diretório pode ser manipulado com as ferramentas Unix padrão; por exemplo, arquivos em um arquivo não compactado podem ser compactados com o gzip ferramenta. Esse formato é compactado por padrão e também suporta despejos paralelos.
+
+t <br />
+tar
+
+Saída a tar-format archive adequado para entrada em pg_restore. O formato tar é compatível com o formato de diretório: extrair um arquivo tar-format produz um arquivo de formato de diretório válido. No entanto, o formato tar não suporta compactação. Além disso, ao usar o formato tar, a ordem relativa dos itens de dados da tabela não pode ser alterada durante a restauração.
+
+No caso do procedimento de conversão para binário foi utilizado o c (custom) para customizar a opção de bin.
+
 # Procedimento de Backup Lógico - pg_dumpall
 
 > Comandos para gerar o pg_dumpall:
