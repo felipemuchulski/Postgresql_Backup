@@ -6,8 +6,8 @@ Esse repositório tem como base gerar Backups diários do banco de dados Postgre
 > O que é Backup Lógico:
 
 Também conhecido como dump, é a transcrição lógica da base de dados para um arquivo ou diretório (conforme o tipo do dump).
-Um dump contém instruções SQL que devem ser processadas uma por uma tanto no processo de gerar dump, quanto no seu processo de restauração. Muito vantajoso para fazer migração para uma versão mais nova. no entanto devido ao processamento de cada instrução SQL, pode ser mais demorado que um Backup Fisíco.
-Um dump pode ser de toda instância (com pg_dumpall), de apenas um database, de um schema ou somente de uma tabela
+Um dump contém instruções SQL que devem ser processadas uma por uma tanto no processo de gerar dump, quanto no seu processo de restauração. Muito vantajoso para fazer migração para uma versão mais nova. No entanto devido ao processamento de cada instrução SQL, pode ser mais demorado que um Backup Fisíco.
+Um dump pode ser de toda instância (com pg_dumpall), de apenas um database, de um schema ou somente de uma tabela.
 
 > Comandos para gerar o pg_dump:
 Acessado o terminal, iremos definir um diretório especifico para o backup. Por exemplo no WSL foi definido em:
@@ -16,12 +16,12 @@ Acessado o terminal, iremos definir um diretório especifico para o backup. Por 
 
 Para podermos gerar o backup de um database em especifico usaremos os seguintes comandos:
 
-1- su - postgres
+1- su - postgres;
 
-2- pg_dump database_name > nomebackup.bkp
+2- pg_dump database_name > nomebackup.bkp;
 
 > Exemplo:
-su - postgres pg_dump muchulski > muchulski.bkp
+su - postgres pg_dump muchulski > muchulski.bkp;
 
 # Procedimento de Backup Lógico - pg_dumpall
 
@@ -29,15 +29,15 @@ su - postgres pg_dump muchulski > muchulski.bkp
 
 Devemos estar no diretório configurado para os backups:
 
-1- su - postgres
+1- su - postgres;
 
-2- pg_dumpall -U postgres > all.sql
+2- pg_dumpall -U postgres > all.sql;
 
 # Procedimento de Restauração do banco - tanto para pg_dump quanto para pg_dumpall
 
 > Caso o banco de dados seja apagado, poderá ser feita a restauração do banco. Para isso seguir os seguintes passos: 
 
-1- Dentro do usuário postgres executar o comando 'psql':
+1- Dentro do usuário postgres executar o comando 'psql';
 
 2- Deveremos criar novamente um novo database, pode ser o mesmo nome do antigo com o seguinte comando: 
 
@@ -45,7 +45,7 @@ CREATE DATABASE muchulski TEMPLATE template0;
 
 ----Observamos que ele foi criado baseado no template0, é importante que ele siga esse template.
 
-3- Iremos dar um '\q' para sair do prompt psql e acessar novamente o usuário postgres.
+3- Iremos dar um '\q' para sair do prompt psql e acessar novamente o usuário postgres;
 
 4- Dentro do diretório onde temos o arquivo de backup, podemos executar o seguinte comando:
 
@@ -53,13 +53,13 @@ psql muchulski < muchulski.bkp  --- assim iremos restaurar todos os dados que ti
 
 (Caso não esteja conectado com o usuário postgres, usar esse comando dentro do diretório):
 
-sudo su -U postgres psql database < nomearquivo.bkp
+sudo su -U postgres psql database < nomearquivo.bkp;
 
 > Procedimento de restauração com pg_dumpall:
 
 Para restaurar os bancos com um arquivo de backup all, deveremos acessar o diretório de onde foi criado o arquivo de backup, e executar o seguinte comando:
 
-psql -U postgres -f all.sql
+psql -U postgres -f all.sql;
 
 SINTAXE: -U (define o usuário) / -f filename
 
@@ -69,7 +69,7 @@ Além do pg_dump o PostgreSQL também oferece a pg_dumpall que permite fazer bac
 O pg_dumpall exporta todos os bancos de dados, um após o outro, em um único arquivo de script, o que impede que você execute a restauração paralela. Se você fizer backup de todos os bancos de dados dessa maneira, o processo de restauração levará mais tempo.
 O processamento de restore de todos os bancos de dados leva mais tempo do que cada um, portanto, você não sabe qual seria o restore de cada banco de dados está relacionado a um determinado momento.
 
-Se quiser poupar tempo usar o pg_dump para cada database, caso contrário usar o pg_dumpall
+Se quiser poupar tempo usar o pg_dump para cada database, caso contrário usar o pg_dumpall.
 
 # Observações:
 
